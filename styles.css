@@ -2,12 +2,13 @@
 :root {
   --paper: #ededed;
   --table: #dfdcd9;
-  --ink: #3f3a37;
-  --ink-soft: #5e5854;
-  --rust: #b65f4e;
-  --rust-dark: #9b4a3a;
-  --rose: #e9b9b0;
-  --sage: #5f7a5a;
+  --ink: #737a58;        /* text */
+  --ink-soft: #737a58;   /* secondary text (same tone: fading it further would drop below ~3:1 contrast) */
+  --rust: #c05a7b;       /* main: titles, headings, fills */
+  --rust-dark: #af4366;  /* same hue, darker: small text/links/errors/hover (4.7:1 on the paper) */
+  --rose: #dca4b6;       /* soft tint of the main color: focus rings */
+  --sage: #737a58;       /* secondary green */
+  --rust-tint: rgba(192, 90, 123, .12); /* main color at 12%: hover backgrounds */
   --line: #c4c0bc;
   --card: rgba(255, 255, 255, .55);
   --serif: "Cormorant Garamond", "Times New Roman", Georgia, serif;
@@ -25,6 +26,7 @@ body {
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.5;
+  font-variant-numeric: lining-nums;   /* Cormorant's default old-style digits make "1" look like a tiny "I" */
   -webkit-font-smoothing: antialiased;
 }
 [hidden] { display: none !important; }
@@ -77,7 +79,7 @@ body {
   cursor: pointer;
   border-bottom: 1px solid transparent;
 }
-.lang button[aria-pressed="true"] { color: var(--rust); border-bottom-color: var(--rust); font-weight: 600; }
+.lang button[aria-pressed="true"] { color: var(--rust-dark); border-bottom-color: var(--rust); font-weight: 600; }
 
 /* ── layout ── */
 .content {
@@ -104,15 +106,16 @@ body {
   text-transform: uppercase;
   color: var(--rust);
 }
-.title-amp {
-  display: block;
-  font-family: var(--script);
-  font-size: clamp(1.7rem, 6vw, 2.5rem);
-  color: var(--rose);
-  line-height: 1.2;
+.sr-only {   /* spoken by screen readers only: keeps the heading reading "Anh Thừa & Em Thiếu" */
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 .title-b {
   display: block;
+  margin-top: -.07em;     /* pull the script name up under "ANH THỪA" without touching it */
   font-family: var(--script);
   font-weight: 400;
   font-size: clamp(3.3rem, 14vw, 6rem);
@@ -140,7 +143,7 @@ body {
   font-weight: 700;
   letter-spacing: .34em;
   text-transform: uppercase;
-  color: #4c6747;
+  color: var(--sage);
 }
 .facts-value { font-size: 1.45rem; font-weight: 600; letter-spacing: .08em; color: var(--ink); }
 .facts-venue { text-transform: uppercase; letter-spacing: .12em; }
@@ -175,14 +178,14 @@ body {
   letter-spacing: .2em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--rust);
+  color: var(--rust-dark);
   background: transparent;
   border: 1px solid var(--rust);
   border-radius: 2px;
   cursor: pointer;
   transition: background .2s, color .2s;
 }
-.btn:hover, .btn:focus-visible { background: rgba(182, 95, 78, .1); }
+.btn:hover, .btn:focus-visible { background: var(--rust-tint); }
 .btn--solid { background: var(--rust); color: #fff; }
 .btn--solid:hover, .btn--solid:focus-visible { background: var(--rust-dark); }
 .btn--wide { width: 100%; margin-top: .6rem; padding: .95rem 1.5rem; font-size: 1rem; }
@@ -237,6 +240,7 @@ input[type="text"], input[type="number"], textarea {
   width: 100%;
   padding: .7rem .85rem;
   font: 500 1.15rem var(--serif);   /* >=16px: no iOS zoom on focus */
+  font-variant-numeric: lining-nums; /* the font shorthand above resets it, so set it again */
   color: var(--ink);
   background: rgba(255, 255, 255, .8);
   border: 1px solid var(--line);
@@ -248,10 +252,13 @@ input:focus, textarea:focus { outline: 2px solid var(--rose); outline-offset: 0;
 
 .choices { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
 @media (max-width: 460px) { .choices { grid-template-columns: 1fr; } }
-.choice { position: relative; display: block; margin: 0 !important; cursor: pointer; }
+.choice { position: relative; display: flex; margin: 0 !important; cursor: pointer; }
 .choice input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
 .choice span {
-  display: block;
+  flex: 1;                          /* fill the whole cell, so both choices are always the same height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: .85rem 1rem;
   text-align: center;
   font-size: 1.1rem;
@@ -272,14 +279,15 @@ input:focus, textarea:focus { outline: 2px solid var(--rose); outline-offset: 0;
   appearance: none;
   width: 3rem;
   font: 400 1.6rem var(--serif);
-  color: var(--rust);
+  color: var(--rust-dark);
   background: none;
   border: 0;
   cursor: pointer;
 }
-.stepper button:hover { background: rgba(182, 95, 78, .1); }
+.stepper button:hover { background: var(--rust-tint); }
 .stepper input {
   width: 4rem;
+  font-weight: 600;
   padding: .6rem 0;
   text-align: center;
   border: 0;
@@ -304,8 +312,14 @@ input:focus, textarea:focus { outline: 2px solid var(--rose); outline-offset: 0;
 .map { margin-top: 1rem; border: 1px solid var(--line); background: #e6e3e0; }
 .map iframe { display: block; width: 100%; height: clamp(240px, 52vw, 340px); border: 0; filter: grayscale(.3) contrast(.96) sepia(.08); }
 .map-links { margin: .8rem 0 0; text-align: center; }
-.map-links a { color: var(--rust); letter-spacing: .06em; text-underline-offset: 3px; }
+.map-links a { color: var(--rust-dark); letter-spacing: .06em; text-underline-offset: 3px; }
 
-.foot { margin-top: 3rem; font-family: var(--script); font-size: 1.9rem; color: var(--rose); }
+.foot {
+  margin-top: 3rem;
+  font-family: var(--script);
+  font-size: clamp(2.1rem, 7vw, 2.6rem);
+  line-height: 1.4;          /* room for stacked Vietnamese marks */
+  color: var(--rust);        /* the pale rose accent was too faint on the grey paper */
+}
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
