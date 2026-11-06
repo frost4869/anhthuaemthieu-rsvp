@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Anh Thừa &amp; Em Thiếu · RSVP</title>
+  <meta name="description" content="Mạn đàm · Saturday 19.12.2026 · Oromia Coffee &amp; Lounge, Ho Chi Minh City. Please RSVP.">
+  <meta name="theme-color" content="#ededed">
+  <meta property="og:title" content="Anh Thừa & Em Thiếu · Mạn đàm">
+  <meta property="og:description" content="Saturday 19.12.2026 · 18:30 · Oromia Coffee & Lounge. You're invited, please RSVP.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Both families include the Vietnamese subset -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="sheet">
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en">EN</button>
+      <span aria-hidden="true">·</span>
+      <button type="button" data-lang="vi">VI</button>
+    </div>
+
+    <main class="content">
+      <!-- ───────── Invitation ───────── -->
+      <section class="hero">
+        <p class="eyebrow" data-i18n="eyebrow"></p>
+        <h1 class="title">
+          <span class="title-a" id="titleA"></span>
+          <span class="title-amp" aria-hidden="true">&amp;</span>
+          <span class="title-b" id="titleB"></span>
+        </h1>
+        <p class="lead" data-i18n="lead"></p>
+
+        <ul class="facts">
+          <li>
+            <span class="facts-label" data-i18n="when"></span>
+            <span class="facts-value" id="dateText"></span>
+            <span class="facts-sub" id="timeText"></span>
+          </li>
+          <li>
+            <span class="facts-label" data-i18n="where"></span>
+            <span class="facts-value facts-venue" id="venueText"></span>
+            <span class="facts-sub" id="addressText"></span>
+          </li>
+        </ul>
+
+        <div class="actions">
+          <a class="btn btn--solid" href="#rsvp" data-i18n="rsvpCta"></a>
+          <a class="btn" id="btnDirections" target="_blank" rel="noopener" data-i18n="directions"></a>
+          <button class="btn" type="button" id="btnCal"></button>
+        </div>
+      </section>
+
+      <!-- ───────── RSVP ───────── -->
+      <section class="panel" id="rsvp" aria-labelledby="rsvpTitle">
+        <h2 class="h2" id="rsvpTitle" data-i18n="rsvpTitle"></h2>
+        <p class="panel-sub" data-i18n="rsvpSub"></p>
+
+        <form id="rsvpForm" novalidate>
+          <!-- honeypot: real people never see/fill this -->
+          <div class="hp" aria-hidden="true">
+            <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+
+          <div class="field">
+            <label for="name" data-i18n="fName"></label>
+            <input id="name" name="name" type="text" maxlength="100" autocomplete="name" required>
+            <p class="err" id="errName" role="alert" hidden></p>
+          </div>
+
+          <fieldset class="field">
+            <legend data-i18n="fAttending"></legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="attending" value="yes"><span data-i18n="fYes"></span></label>
+              <label class="choice"><input type="radio" name="attending" value="no"><span data-i18n="fNo"></span></label>
+            </div>
+            <p class="err" id="errAttending" role="alert" hidden></p>
+          </fieldset>
+
+          <div class="field" id="guestsField" hidden>
+            <label for="guests" data-i18n="fGuests"></label>
+            <div class="stepper">
+              <button type="button" id="gMinus" aria-label="−">−</button>
+              <input id="guests" name="guests" type="number" inputmode="numeric" min="1" value="1">
+              <button type="button" id="gPlus" aria-label="+">+</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message" data-i18n="fMessage"></label>
+            <textarea id="message" name="message" rows="3" maxlength="1000" data-i18n-ph="fMessagePh"></textarea>
+          </div>
+
+          <button class="btn btn--solid btn--wide" type="submit" id="btnSubmit" data-i18n="fSubmit"></button>
+          <p class="err" id="errForm" role="alert" hidden></p>
+        </form>
+
+        <div class="thanks" id="thanks" hidden aria-live="polite">
+          <p class="thanks-script" id="thanksTitle"></p>
+          <p id="thanksText"></p>
+          <p class="demo-note" id="demoNote" hidden data-i18n="demoNote"></p>
+          <button class="link" type="button" id="btnEdit" data-i18n="editResponse"></button>
+        </div>
+      </section>
+
+      <!-- ───────── Map ───────── -->
+      <section class="panel panel--map" aria-labelledby="mapTitle">
+        <h2 class="h2" id="mapTitle" data-i18n="mapTitle"></h2>
+        <div class="map">
+          <iframe id="mapFrame" title="Google Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <p class="map-links"><a id="btnOpenMaps" target="_blank" rel="noopener" data-i18n="openMaps"></a></p>
+      </section>
+
+      <footer class="foot" data-i18n="footer"></footer>
+    </main>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
