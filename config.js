@@ -20,6 +20,12 @@ window.EVENT_CONFIG = {
   // If the pin lands in the wrong place, paste the exact place name/address from Google Maps.
   mapsQuery: "Oromia Coffee & Lounge, 85 Phan Kế Bính, Tân Định, Hồ Chí Minh",
 
+  // Shown in the "Contact" section; phone = digits only (rendered as a tap-to-call link)
+  contacts: [
+    { name: "Chị Khánh Chi", phone: "0776711773" },
+    { name: "Anh Hoàng Sơn", phone: "0916398819" },
+  ],
+
   maxGuests: 10, // upper limit of "number of guests (including you)"
 
   // Google Apps Script web-app URL that stores RSVPs in a Google Sheet (see README.md).

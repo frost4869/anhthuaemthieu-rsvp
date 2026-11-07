@@ -6,7 +6,7 @@
   /* ───────────────────────── i18n ───────────────────────── */
   const I18N = {
     en: {
-      eyebrow: "Casual get-together",
+      eyebrow: "Talk show",
       lead: "We'd love to see you.",
       when: "When",
       where: "Where",
@@ -20,8 +20,8 @@
       fYes: "Yes, I'll be there",
       fNo: "Sorry, I can't make it",
       fGuests: "Number of guests (including you)",
-      fMessage: "Message to the host (optional)",
-      fMessagePh: "Anything you'd like us to know…",
+      fMessage: "Question for the speaker (optional)",
+      fMessagePh: "Questions are kept anonymous, and the speaker will answer them during the program",
       fSubmit: "Send RSVP",
       sending: "Sending…",
       errName: "Please enter your name.",
@@ -37,45 +37,81 @@
       editResponse: "Change my response",
       demoNote: "Demo mode: this response was not saved anywhere (guest list not connected yet).",
       mapTitle: "Find us",
-      openMaps: "Open in Google Maps",
+      contactTitle: "Contact",
+      contactSub: "Questions about the event? Give us a call.",
+      talkTitle: "About the talk",
+      talkQuote: "Because he has too much, and thanks to her lack, humankind has thirsted for love through all ages.",
+      talkShow: "Discover what the talk is about",
+      talk1: "What is this thirst for love, that keeps so many hearts forever yearning, searching, aching without rest?",
+      talk2: "Perhaps, even after a thousand generations, we will still struggle to fully explain the longing for love between man and woman, just as we can never fully account for the wondrous pull between the two poles of yin and yang, between differences that seem opposed yet always turn toward one another.",
+      talk3: "The only thing we can be sure of is this: as long as a longing for love still lives within us, we are still alive, still stirred, still part of life’s wondrous current. For deep within every person, however different in form or inner world, there is always a desire to be swept away in the intoxication of love.",
+      talk4: "Out of that same restlessness, the talk “ANH THỪA, EM THIẾU” was born. It will be an occasion for us to explore together the art of connection between men and women: where lack raises its voice in a call, and surplus finds meaning in giving.",
+      talkSign: "Sincerely, the Authors’ Club",
+      speakerTitle: "Our speaker",
+      speakerName: "Ngô Duy Cường",
+      speakerRole: "Author & artist",
+      speakerAlt: "Portrait of Ngô Duy Cường",
+      bioShow: "Discover more about the speaker",
+      collapseHide: "Show less",
+      bio1: "Author of “Tôi Đi Tìm Ai”, “Không Gì Dễ Bằng Yêu”, “Lãng Mạn – Giải Mã Thơ Tình Solomon” and “Đẹp Như Hơi Thở”. He graduated from an art college in the United States and has exhibited his paintings in major cities. He completed his master’s degree at the Andrews University Theological Seminary in 2001 and wrote his doctoral dissertation in 2015. He often organizes charity programs at orphanages and leprosy villages, and is invited to speak at religious communities, monasteries and universities. Drawing on his own experience, he has brought healing to many people through depression-therapy classes built on nature therapy.",
+      bio2: "His everyday happiness is wandering through nature, enjoying the brushstrokes on a canvas, sitting down to write, and savoring a warm cup of tea in the stillness of the four seasons. At sixteen, on his way to school, he suddenly saw a young girl walking toward him on the other side of the street. In that instant his soul reeled and his heart seemed to stop. He has loved her passionately ever since. It has now been 37 years, and the warmth of that love is as strong as on the first day.",
+      bio3: "Author Ngô Duy Cường and his wife have three children: Thùy Trân, Duy Ân and Linh Ân. They live in the City of Roses, Oregon, USA.",
       footer: "See you there",
-      eventTitle: "Anh Thừa & Em Thiếu – Casual get-together",
+      eventTitle: "Anh Thừa & Em Thiếu – Talk show",
       eventDesc: "RSVP & details: {url}",
     },
     vi: {
       eyebrow: "Mạn đàm",
-      lead: "Rất mong được đón bạn.",
+      lead: "Rất mong được đón tiếp quý khách mời.",
       when: "Thời gian",
       where: "Địa điểm",
       rsvpCta: "Xác nhận",
       directions: "Chỉ đường",
       addCal: "Thêm vào lịch",
-      rsvpTitle: "Bạn sẽ đến chứ?",
-      rsvpSub: "Cho chúng mình biết bạn có đến được không nhé.",
-      fName: "Tên của bạn",
-      fAttending: "Bạn có tham dự không?",
-      fYes: "Có, mình sẽ đến",
-      fNo: "Mình không đến được",
-      fGuests: "Số khách (bao gồm bạn)",
-      fMessage: "Lời nhắn đến chủ nhà (không bắt buộc)",
-      fMessagePh: "Bạn muốn nhắn gì với chúng mình…",
+      rsvpTitle: "Vui lòng xác nhận tham dự",
+      rsvpSub: "Cho chúng tôi biết anh/chị có tham dự được không nhé.",
+      fName: "Tên của anh/chị",
+      fAttending: "Anh/chị có tham dự không?",
+      fYes: "Có, tôi sẽ tham dự",
+      fNo: "Tôi không tham dự được",
+      fGuests: "Số khách (bao gồm anh/chị)",
+      fMessage: "Câu hỏi dành cho diễn giả (không bắt buộc)",
+      fMessagePh: "Câu hỏi sẽ được ẩn danh và diễn giả sẽ giải đáp trong chương trình",
       fSubmit: "Gửi xác nhận",
       sending: "Đang gửi…",
-      errName: "Vui lòng nhập tên của bạn.",
+      errName: "Vui lòng nhập tên của anh/chị.",
       errAttending: "Vui lòng chọn có hoặc không.",
       errSend: "Có lỗi xảy ra. Vui lòng thử lại sau ít phút.",
       errBusy: "Đang có nhiều phản hồi. Vui lòng thử lại sau một phút.",
       errClosed: "Đã đóng nhận xác nhận. Vui lòng liên hệ trực tiếp chủ nhà.",
       thanksYes: "Cảm ơn {name}!",
-      thanksYesText: "Chúng mình đã giữ chỗ cho {n}. Hẹn gặp bạn nhé!",
+      thanksYesText: "Chúng mình đã giữ chỗ cho {n}. Hẹn gặp anh/chị nhé!",
       thanksNo: "Cảm ơn {name}",
-      thanksNoText: "Tiếc là bạn không đến được. Hẹn dịp khác nhé!",
+      thanksNoText: "Tiếc là anh/chị không tham dự được. Hẹn dịp khác nhé!",
       people: { one: "1 người", other: "{n} người" },
       editResponse: "Sửa câu trả lời",
       demoNote: "Chế độ thử: câu trả lời này chưa được lưu (chưa kết nối danh sách khách).",
-      mapTitle: "Chỉ đường",
-      openMaps: "Mở trong Google Maps",
-      footer: "Hẹn gặp bạn nhé",
+      mapTitle: "Hướng dẫn đường đi",
+      contactTitle: "Liên hệ",
+      contactSub: "Cần hỗ trợ thêm? Xin vui lòng gọi cho chúng tôi.",
+      talkTitle: "Về buổi mạn đàm",
+      talkQuote: "Vì anh thừa, nhờ em thiếu – mà nhân thế muôn đời vẫn khát tình",
+      talkShow: "Khám phá nội dung buổi mạn đàm",
+      talk1: "Khát tình là gì, mà khiến bao trái tim cứ mãi khắc khoải, kiếm tìm, thổn thức khôn nguôi?",
+      talk2: "Có lẽ, dẫu trải qua ngàn đời, con người vẫn khó lòng lý giải đến tận cùng khát vọng ái tình giữa người nam và người nữ; cũng như chẳng thể cắt nghĩa trọn vẹn sức hút diệu kỳ giữa hai cực âm – dương, giữa những khác biệt tưởng chừng đối nghịch mà lại luôn hướng về nhau.",
+      talk3: "Điều duy nhất ta có thể chắc chắn, là: chừng nào trong ta vẫn còn một nỗi khát khao yêu thương, chừng ấy ta vẫn đang sống, vẫn rung động và vẫn hòa mình vào dòng chảy nhiệm màu của sự sống. Bởi sâu thẳm trong mỗi con người, dù khác biệt về hình hài hay thế giới nội tâm, vẫn luôn khát khao được đắm say trong men tình.",
+      talk4: "Cũng từ niềm thao thức ấy mà buổi mạn đàm “ANH THỪA, EM THIẾU” được hình thành. Đây sẽ là dịp để chúng ta cùng nhau khám phá nghệ thuật tương giao giữa nam và nữ; nơi cái thiếu cất lên tiếng gọi, và cái thừa tìm thấy ý nghĩa của sự trao ban.",
+      talkSign: "Trân trọng, CLB Tác giả",
+      speakerTitle: "Diễn giả",
+      speakerName: "Ngô Duy Cường",
+      speakerRole: "Nhà văn · Họa sĩ",
+      speakerAlt: "Chân dung Ngô Duy Cường",
+      bioShow: "Khám phá thêm về diễn giả",
+      collapseHide: "Thu gọn",
+      bio1: "Là tác giả của những quyển sách Tôi Đi Tìm Ai, Không Gì Dễ Bằng Yêu, Lãng Mạn – Giải Mã Thơ Tình Solomon, Đẹp Như Hơi Thở. Ông tốt nghiệp trường Đại học Mỹ thuật tại Hoa Kỳ, từng triển lãm họa phẩm nghệ thuật tại các thành phố lớn. Ông hoàn thành chương trình thạc sĩ tại Viện Thần học Andrews University năm 2001 và viết luận án tiến sĩ năm 2015. Ông cũng thường tổ chức các chương trình từ thiện tại các cô nhi viện, làng phong và được mời thuyết giảng tại các đoàn thể tôn giáo, tu viện, trường đại học. Với sự trải nghiệm của bản thân, ông đã mang đến sự chữa lành cho nhiều người qua các lớp trị liệu trầm cảm bằng liệu pháp thiên nhiên.",
+      bio2: "Niềm hạnh phúc thường ngày của ông là được tản bộ trong cảnh thiên nhiên, vui với nét cọ trên khung vải, ngồi viết lách, tĩnh lặng và thưởng thức tách trà ấm theo khung cảnh bốn mùa. Năm 16 tuổi, trong lúc dạo bước đến trường, bất chợt nhìn thấy một cô bé đang đi đối diện bên kia đường. Ngay tức khắc, thần hồn chao đảo, nhịp tim như dừng lại. Ông yêu mê say người con gái này kể từ ngày ấy. Nay đã 37 năm, mà độ thắm nồng vẫn như ngày nào.",
+      bio3: "Vợ chồng Nhà văn Ngô Duy Cường có được ba người con, Thùy Trân, Duy Ân, và Linh Ân. Họ sinh sống tại thành phố Hoa Hồng, tiểu bang Oregon, Hoa Kỳ.",
+      footer: "Hẹn gặp anh/chị nhé",
       eventTitle: "Anh Thừa & Em Thiếu – Mạn đàm",
       eventDesc: "Chi tiết & xác nhận: {url}",
     },
@@ -120,7 +156,6 @@
 
   /* ───────────────────────── map links ───────────────────────── */
   const q = encodeURIComponent(C.mapsQuery);
-  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${q}`;
   const dirUrl = `https://www.google.com/maps/dir/?api=1&destination=${q}`;
 
   /* ───────────────────────── calendar ───────────────────────── */
@@ -204,6 +239,7 @@
     document.documentElement.lang = lang;
     document.querySelectorAll("[data-i18n]").forEach((el) => { el.textContent = t(el.dataset.i18n); });
     document.querySelectorAll("[data-i18n-ph]").forEach((el) => { el.placeholder = t(el.dataset.i18nPh); });
+    document.querySelectorAll("[data-i18n-alt]").forEach((el) => { el.alt = t(el.dataset.i18nAlt); });
     document.querySelectorAll(".lang button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
 
     $("dateText").textContent = dateLine();
@@ -232,8 +268,18 @@
     // the separating space lives OUTSIDE the nowrap span, so it stays a legal line-break point
     return i < addrParts.length - 1 ? [s, document.createTextNode(" ")] : [s];
   }));
+  $("contactList").replaceChildren(...(C.contacts || []).map((c) => {
+    const li = document.createElement("li");
+    const name = document.createElement("span");
+    name.className = "contact-name";
+    name.textContent = c.name;
+    const a = document.createElement("a");
+    a.href = `tel:${c.phone}`;
+    a.textContent = c.phone.replace(/^(\d{4})(\d{3})(\d{3})$/, "$1 $2 $3");
+    li.append(name, a);
+    return li;
+  }));
   $("btnDirections").href = dirUrl;
-  $("btnOpenMaps").href = mapsUrl;
   $("mapFrame").src = `https://www.google.com/maps?q=${q}&z=16&output=embed`;
 
   /* ───────────────────────── RSVP form ───────────────────────── */

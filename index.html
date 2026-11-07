@@ -55,6 +55,52 @@
         </div>
       </section>
 
+      <!-- ───────── About the talk ───────── -->
+      <section class="panel talk" aria-labelledby="talkTitle">
+        <h2 class="h2" id="talkTitle" data-i18n="talkTitle"></h2>
+        <!-- collapsed by default: no `open` attribute -->
+        <details class="collapse">
+          <summary class="talk-summary">
+            <span class="talk-quote" data-i18n="talkQuote"></span>
+            <span class="collapse-toggle">
+              <span class="when-closed" data-i18n="talkShow"></span>
+              <span class="when-open" data-i18n="collapseHide"></span>
+            </span>
+          </summary>
+          <div class="talk-body">
+            <p data-i18n="talk1"></p>
+            <p data-i18n="talk2"></p>
+            <p data-i18n="talk3"></p>
+            <p data-i18n="talk4"></p>
+            <p class="talk-sign" data-i18n="talkSign"></p>
+          </div>
+        </details>
+      </section>
+
+      <!-- ───────── Speaker ───────── -->
+      <section class="panel speaker" aria-labelledby="speakerTitle">
+        <h2 class="h2" id="speakerTitle" data-i18n="speakerTitle"></h2>
+        <!-- collapsed by default: no `open` attribute -->
+        <details class="collapse">
+          <summary class="speaker-head">
+            <img class="speaker-photo" src="speaker-photo.jpg" width="1060" height="1060" loading="lazy" data-i18n-alt="speakerAlt" alt="">
+            <span class="speaker-id">
+              <span class="speaker-name" data-i18n="speakerName"></span>
+              <span class="speaker-role" data-i18n="speakerRole"></span>
+              <span class="collapse-toggle">
+                <span class="when-closed" data-i18n="bioShow"></span>
+                <span class="when-open" data-i18n="collapseHide"></span>
+              </span>
+            </span>
+          </summary>
+          <div class="speaker-bio">
+            <p data-i18n="bio1"></p>
+            <p data-i18n="bio2"></p>
+            <p data-i18n="bio3"></p>
+          </div>
+        </details>
+      </section>
+
       <!-- ───────── RSVP ───────── -->
       <section class="panel" id="rsvp" aria-labelledby="rsvpTitle">
         <h2 class="h2" id="rsvpTitle" data-i18n="rsvpTitle"></h2>
@@ -113,7 +159,13 @@
         <div class="map">
           <iframe id="mapFrame" title="Google Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
-        <p class="map-links"><a id="btnOpenMaps" target="_blank" rel="noopener" data-i18n="openMaps"></a></p>
+      </section>
+
+      <!-- ───────── Contact ───────── -->
+      <section class="panel contact" aria-labelledby="contactTitle">
+        <h2 class="h2" id="contactTitle" data-i18n="contactTitle"></h2>
+        <p class="panel-sub" data-i18n="contactSub"></p>
+        <ul class="contact-list" id="contactList"></ul>
       </section>
 
       <footer class="foot" data-i18n="footer"></footer>

@@ -308,11 +308,42 @@ input:focus, textarea:focus { outline: 2px solid var(--rose); outline-offset: 0;
 .demo-note { font-size: .95rem; font-style: italic; color: var(--ink-soft); border-top: 1px dashed var(--line); padding-top: .8rem; }
 
 /* ── map ── */
-.panel--map { padding-bottom: 1.2rem; }
 .map { margin-top: 1rem; border: 1px solid var(--line); background: #e6e3e0; }
 .map iframe { display: block; width: 100%; height: clamp(240px, 52vw, 340px); border: 0; filter: grayscale(.3) contrast(.96) sepia(.08); }
-.map-links { margin: .8rem 0 0; text-align: center; }
-.map-links a { color: var(--rust-dark); letter-spacing: .06em; text-underline-offset: 3px; }
+
+/* ── shared collapsible (<details class="collapse">) ── */
+.collapse > summary { cursor: pointer; list-style: none; }
+.collapse > summary::-webkit-details-marker { display: none; }
+.collapse > summary:focus-visible { outline: 2px solid var(--rose); outline-offset: 6px; }
+
+/* ── talk ── */
+.talk-summary { display: block; margin-top: .8rem; text-align: center; }
+.talk-quote { display: block; font-size: 1.45rem; font-style: italic; line-height: 1.35; color: var(--rust-dark); text-wrap: balance; }
+.collapse[open] .talk-summary { margin-bottom: 1.4rem; }
+.talk-body p { margin: 0 0 1rem; }
+.talk-body .talk-sign { margin: 1.4rem 0 0; text-align: right; font-style: italic; }
+
+/* ── speaker ── */
+.speaker-bio p { margin: 0 0 1rem; }
+.speaker-bio p:last-child { margin-bottom: 0; }
+.speaker-head { display: flex; align-items: center; gap: 1.2rem; margin: .8rem 0 0; }
+.speaker-id { display: block; }
+.collapse[open] .speaker-head { margin-bottom: 1.4rem; }
+.collapse-toggle { display: inline-block; margin-top: .5rem; color: var(--rust-dark); letter-spacing: .06em; font-size: 1rem; }
+.collapse-toggle::after { content: ""; display: inline-block; width: .45em; height: .45em; margin-left: .5em; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-.15em) rotate(45deg); transition: transform .2s; }
+.collapse[open] .collapse-toggle::after { transform: translateY(.05em) rotate(-135deg); }
+.collapse:not([open]) .when-open, .collapse[open] .when-closed { display: none; }
+.speaker-photo { flex: none; width: clamp(96px, 26vw, 140px); height: clamp(96px, 26vw, 140px); border-radius: 50%; object-fit: cover; object-position: 55% 40%; border: 1px solid var(--line); }
+.speaker-name { display: block; font-size: 1.5rem; font-weight: 600; line-height: 1.2; color: var(--rust-dark); }
+.speaker-role { display: block; margin-top: .2rem; font-style: italic; }
+
+/* ── contact ── */
+.contact .panel-sub { margin-bottom: 1.2rem; }
+.contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .9rem; text-align: center; }
+.contact-name { display: block; font-size: 1.15rem; }
+.contact-list a { color: var(--rust-dark); font-size: 1.5rem; font-weight: 600; letter-spacing: .06em; text-decoration: none; }
+.contact-list a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.contact-list a:focus-visible { outline: 2px solid var(--rose); outline-offset: 4px; }
 
 .foot {
   margin-top: 3rem;
